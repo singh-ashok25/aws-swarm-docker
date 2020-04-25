@@ -22,9 +22,7 @@ for node in $(seq 1 $leaders);
 do
    docker-machine rm leader$node --force 
 done
-
-
-
-box "Waiting for the SUN during $t sec..." "blue" "red"
+wait
+box "Waiting for the leader node to terminate ..." "blue" "red"
 sleep $t
 aws ec2 delete-security-group --group-name ${sg_name}
