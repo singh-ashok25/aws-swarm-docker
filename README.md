@@ -12,7 +12,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
 https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
 
 # To create docker swarm  run
-init-aws.sh
+create-swarm.sh
 
 # To delete docker swarm run 
 remove-aws.sh
