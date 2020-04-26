@@ -18,6 +18,11 @@ aws ec2 authorize-security-group-ingress --group-name ${sg_name} --protocol udp 
 # Permit VXLAN
 aws ec2 authorize-security-group-ingress --group-name ${sg_name} --protocol tcp --port 4789  --cidr 0.0.0.0/0
 aws ec2 authorize-security-group-ingress --group-name ${sg_name} --protocol udp --port 4789  --cidr 0.0.0.0/0
+# Allow service access 
+aws ec2 authorize-security-group-ingress --group-name ${sg_name} --protocol tcp --port 80  --cidr 0.0.0.0/0
+aws ec2 authorize-security-group-ingress --group-name ${sg_name} --protocol tcp --port 8080  --cidr 0.0.0.0/0
+aws ec2 authorize-security-group-ingress --group-name ${sg_name} --protocol tcp --port 5001  --cidr 0.0.0.0/0
+aws ec2 authorize-security-group-ingress --group-name ${sg_name} --protocol tcp --port 5000  --cidr 0.0.0.0/0
 
 
 box "Starting Docker Machine creation" "green" "blue"
